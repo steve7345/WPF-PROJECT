@@ -1,0 +1,25 @@
+﻿<Window x:Class="ProjectGMS.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjectGMS"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Background="#FFB30909">
+        <ListBox HorizontalAlignment="Left" Height="100" Margin="1067,241,-373.4,0" VerticalAlignment="Top" Width="100"/>
+        <DataGrid x:Name="dagCustomer" HorizontalAlignment="Left" Height="258" Margin="43,83,0,0" VerticalAlignment="Top" Width="544"/>
+        <Label Content="Add Customer" HorizontalAlignment="Left" Margin="622,43,-0.4,0" VerticalAlignment="Top" Height="33" Width="172" FontSize="15"/>
+        <TextBox x:Name="tbx_AddFirstName" HorizontalAlignment="Left" Height="25" Margin="622,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="154"/>
+        <TextBox x:Name="tbx_AddSecondName" HorizontalAlignment="Left" Height="24" Margin="622,124,0,0" TextWrapping="Wrap" Text="Second Name" VerticalAlignment="Top" Width="154"/>
+        <TextBox x:Name="tbx_AddGender" HorizontalAlignment="Left" Height="25" Margin="622,154,0,0" TextWrapping="Wrap" Text="Gender" VerticalAlignment="Top" Width="154"/>
+        <TextBox x:Name="tbx_AddEmail" HorizontalAlignment="Left" Height="25" Margin="622,184,0,0" TextWrapping="Wrap" Text="Email" VerticalAlignment="Top" Width="154"/>
+        <TextBox x:Name="tbx_AddPhoneNumber" HorizontalAlignment="Left" Height="25" Margin="622,214,0,0" TextWrapping="Wrap" Text="Phone Number" VerticalAlignment="Top" Width="154"/>
+        <TextBox x:Name="tbx_AddMembership" HorizontalAlignment="Left" Height="25" Margin="622,244,0,0" TextWrapping="Wrap" Text="Membership(months)" VerticalAlignment="Top" Width="154" RenderTransformOrigin="-0.168,0.822"/>
+        <TextBox x:Name="tbx_AddStartDate" HorizontalAlignment="Left" Height="25" Margin="622,274,0,0" TextWrapping="Wrap" Text="Start Date" VerticalAlignment="Top" Width="154"/>
+        <Label Content="GMS Customers" HorizontalAlignment="Left" Margin="43,10,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <Button x:Name="Btn_AddNewCustomer" Content="Add Customer" HorizontalAlignment="Left" Margin="622,322,0,0" VerticalAlignment="Top" Width="91" Click="Btn_AddNewCustomer_Click_1"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="43,366,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+
+    </Grid>
+</Window>
