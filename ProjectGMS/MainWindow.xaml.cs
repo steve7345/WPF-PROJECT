@@ -33,7 +33,7 @@ namespace ProjectGMS
         {
             string FirstName = tbx_AddFirstName.Text.ToString();
             string SecondName = tbx_AddSecondName.Text.ToString();
-            //DataAccessLayer.newHireAsset(hireName, hireType, hireDailyRate);
+           
             
         }
 
