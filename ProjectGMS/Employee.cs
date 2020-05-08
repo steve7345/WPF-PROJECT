@@ -29,7 +29,7 @@ namespace ProjectGMS
         public System.DateTime StartDate { get; set; }
         public double Salery { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        
         public virtual ICollection<Customer> Customers { get; set; }
     }
 }

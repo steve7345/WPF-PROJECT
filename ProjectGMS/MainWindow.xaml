@@ -5,21 +5,109 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjectGMS"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid Background="#FFB30909">
-        <ListBox HorizontalAlignment="Left" Height="100" Margin="1067,241,-373.4,0" VerticalAlignment="Top" Width="100"/>
-        <DataGrid x:Name="dagCustomer" HorizontalAlignment="Left" Height="258" Margin="43,83,0,0" VerticalAlignment="Top" Width="544"/>
-        <Label Content="Add Customer" HorizontalAlignment="Left" Margin="622,43,-0.4,0" VerticalAlignment="Top" Height="33" Width="172" FontSize="15"/>
-        <TextBox x:Name="tbx_AddFirstName" HorizontalAlignment="Left" Height="25" Margin="622,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="154"/>
-        <TextBox x:Name="tbx_AddSecondName" HorizontalAlignment="Left" Height="24" Margin="622,124,0,0" TextWrapping="Wrap" Text="Second Name" VerticalAlignment="Top" Width="154"/>
-        <TextBox x:Name="tbx_AddGender" HorizontalAlignment="Left" Height="25" Margin="622,154,0,0" TextWrapping="Wrap" Text="Gender" VerticalAlignment="Top" Width="154"/>
-        <TextBox x:Name="tbx_AddEmail" HorizontalAlignment="Left" Height="25" Margin="622,184,0,0" TextWrapping="Wrap" Text="Email" VerticalAlignment="Top" Width="154"/>
-        <TextBox x:Name="tbx_AddPhoneNumber" HorizontalAlignment="Left" Height="25" Margin="622,214,0,0" TextWrapping="Wrap" Text="Phone Number" VerticalAlignment="Top" Width="154"/>
-        <TextBox x:Name="tbx_AddMembership" HorizontalAlignment="Left" Height="25" Margin="622,244,0,0" TextWrapping="Wrap" Text="Membership(months)" VerticalAlignment="Top" Width="154" RenderTransformOrigin="-0.168,0.822"/>
-        <TextBox x:Name="tbx_AddStartDate" HorizontalAlignment="Left" Height="25" Margin="622,274,0,0" TextWrapping="Wrap" Text="Start Date" VerticalAlignment="Top" Width="154"/>
-        <Label Content="GMS Customers" HorizontalAlignment="Left" Margin="43,10,0,0" VerticalAlignment="Top" FontSize="20"/>
-        <Button x:Name="Btn_AddNewCustomer" Content="Add Customer" HorizontalAlignment="Left" Margin="622,322,0,0" VerticalAlignment="Top" Width="91" Click="Btn_AddNewCustomer_Click_1"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="43,366,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
+    <TabControl TabStripPlacement="top">
+        <TabItem x:Name="Customer" Header="Add Customer" Width="100">
+            <Grid Background="#FFB30909">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="85*"/>
+                    <ColumnDefinition Width="112*"/>
+                </Grid.ColumnDefinitions>
+                <ListBox HorizontalAlignment="Left" Height="100" Margin="727,241,-379,0" VerticalAlignment="Top" Width="100" Grid.Column="1"/>
+                <DataGrid x:Name="dagCustomer" HorizontalAlignment="Left" Height="198" Margin="43,41,0,0" VerticalAlignment="Top" Width="440" Grid.ColumnSpan="2"/>
+                <Label Content="Add Customer" HorizontalAlignment="Left" Margin="272,17,0,0" VerticalAlignment="Top" Height="33" Width="172" FontSize="15" Grid.Column="1"/>
+                <TextBox x:Name="tbx_AddFirstName" HorizontalAlignment="Left" Height="25" Margin="272,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="154" Foreground="#FFD61515" Grid.Column="1"/>
+                <TextBox x:Name="tbx_AddSecondName" HorizontalAlignment="Left" Height="24" Margin="272,98,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="154" Grid.Column="1"/>
+                <TextBox x:Name="tbx_AddGender" HorizontalAlignment="Left" Height="25" Margin="272,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="154" Grid.Column="1"/>
+                <TextBox x:Name="tbx_AddEmail" HorizontalAlignment="Left" Height="25" Margin="272,158,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="154" Grid.Column="1"/>
+                <TextBox x:Name="tbx_AddPhoneNumber" HorizontalAlignment="Left" Height="25" Margin="272,189,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="154" Grid.Column="1"/>
+                <TextBox x:Name="tbx_AddMembership" HorizontalAlignment="Left" Height="25" Margin="272,218,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="154" RenderTransformOrigin="-0.168,0.822" Grid.Column="1"/>
+                <TextBox x:Name="tbx_AddStartDate" HorizontalAlignment="Left" Height="25" Margin="272,248,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="154" Grid.Column="1"/>
+                <Label Content="GMS Customers" HorizontalAlignment="Left" Margin="43,10,0,0" VerticalAlignment="Top" FontSize="20"/>
+                <Button x:Name="Btn_AddNewCustomer" Content="Add Customer" Margin="272,325,91,0" VerticalAlignment="Top" Click="Btn_AddNewCustomer_Click_1" RenderTransformOrigin="0.5,0.5" BorderThickness="1" Grid.Column="1">
+                    <Button.Effect>
+                        <DropShadowEffect ShadowDepth="8" BlurRadius="10"/>
+                    </Button.Effect>
+                </Button>
+                <Button Content="Get customers info" HorizontalAlignment="Left" Margin="198,253,0,0" VerticalAlignment="Top" Width="113" Click="Button_Click">
+                    <Button.Effect>
+                        <DropShadowEffect BlurRadius="10" ShadowDepth="8"/>
+                    </Button.Effect>
+                </Button>
+                <TextBox x:Name="tbx_AddEmployeeId" HorizontalAlignment="Left" Height="23" Margin="272,278,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="154" RenderTransformOrigin="0.503,-0.183" Grid.Column="1"/>
+                <TextBlock HorizontalAlignment="Left" Margin="199,74,0,0" TextWrapping="Wrap" Text="First Name" VerticalAlignment="Top" Width="73" Height="25" Grid.Column="1"/>
+                <TextBlock HorizontalAlignment="Left" Margin="199,103,0,0" TextWrapping="Wrap" Text="Second Name" VerticalAlignment="Top" Grid.Column="1"/>
+                <TextBlock HorizontalAlignment="Left" Margin="199,136,0,0" TextWrapping="Wrap" Text="Gender" VerticalAlignment="Top" Grid.Column="1"/>
+                <TextBlock HorizontalAlignment="Left" Margin="199,167,0,0" TextWrapping="Wrap" Text="Email" VerticalAlignment="Top" Grid.Column="1"/>
+                <TextBlock HorizontalAlignment="Left" Margin="199,198,0,0" TextWrapping="Wrap" Text="Number" VerticalAlignment="Top" Grid.Column="1"/>
+                <TextBlock HorizontalAlignment="Left" Margin="199,226,0,0" TextWrapping="Wrap" Text="Membership" VerticalAlignment="Top" Grid.Column="1"/>
+                <TextBlock HorizontalAlignment="Left" Margin="199,256,0,0" TextWrapping="Wrap" Text="Start Date" VerticalAlignment="Top" Grid.Column="1"/>
+                <TextBlock HorizontalAlignment="Left" Margin="200,286,0,0" TextWrapping="Wrap" Text="Epmloyee ID" VerticalAlignment="Top" Grid.Column="1"/>
+                <Button x:Name="Btn_deleteCustomer" Content="Delete Customer" HorizontalAlignment="Left" Margin="133,362,0,0" VerticalAlignment="Top" Width="120" Click="Btn_deleteCustomer_Click"/>
+                <TextBox x:Name="Tbx_SelectedCustomer" HorizontalAlignment="Left" Height="23" Margin="133,318,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                <TextBlock HorizontalAlignment="Left" Margin="10,318,0,0" TextWrapping="Wrap" Text="Enter Customer ID" VerticalAlignment="Top" Width="108" Height="26"/>
 
-    </Grid>
+            </Grid>
+        </TabItem>
+        <TabItem Name="Employees" Header="Add Employees" Width="100">
+            <Grid Background="#FFB30909" Margin="0,1,0,-0.8">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="87*"/>
+                    <ColumnDefinition Width="307*"/>
+                </Grid.ColumnDefinitions>
+                <ListBox HorizontalAlignment="Left" Height="100" Margin="894.4,241,-380,0" VerticalAlignment="Top" Width="100" Grid.Column="1"/>
+                <DataGrid x:Name="dagEmployee" HorizontalAlignment="Left" Height="198" Margin="43,41,0,0" VerticalAlignment="Top" Width="440" Grid.ColumnSpan="2" SelectionChanged="DagEmployee_SelectionChanged"/>
+                <Label Content="Add Employee" HorizontalAlignment="Left" Margin="439.4,17,0,0" VerticalAlignment="Top" Height="33" Width="172" FontSize="15" Grid.Column="1"/>
+                <TextBox x:Name="tbx_AddFirstNameE" HorizontalAlignment="Left" Height="25" Margin="439.4,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="154" Foreground="#FFD61515" Grid.Column="1"/>
+                <TextBox x:Name="tbx_AddSecondNameE" HorizontalAlignment="Left" Height="24" Margin="439.4,98,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="154" Grid.Column="1"/>
+                <TextBox x:Name="tbx_AddGenderE" HorizontalAlignment="Left" Height="25" Margin="439.4,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="154" Grid.Column="1"/>
+                <TextBox x:Name="tbx_AddEmailE" HorizontalAlignment="Left" Height="25" Margin="439.4,158,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="154" Grid.Column="1"/>
+                <TextBox x:Name="tbx_AddPhoneNumberE" HorizontalAlignment="Left" Height="25" Margin="439.4,189,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="154" Grid.Column="1"/>
+                <TextBox x:Name="tbx_AddStartDateE" HorizontalAlignment="Left" Height="25" Margin="439.4,219,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="154" Grid.Column="1"/>
+                <Label Content="GMS Employees" HorizontalAlignment="Left" Margin="43,10,0,0" VerticalAlignment="Top" FontSize="20" Grid.ColumnSpan="2"/>
+                <Button x:Name="Btn_AddNewEmployee" Content="Add Employee" Margin="439.4,295,22,0" VerticalAlignment="Top" Click="Btn_AddNewEmployee_Click" RenderTransformOrigin="0.5,0.5" BorderThickness="1" Grid.Column="1">
+                    <Button.Effect>
+                        <DropShadowEffect ShadowDepth="8" BlurRadius="10"/>
+                    </Button.Effect>
+                </Button>
+                <Button Content="Get Employee Info" HorizontalAlignment="Left" Margin="25.4,253,0,0" VerticalAlignment="Top" Width="113" Click="Button_Click_1" Grid.Column="1">
+                    <Button.Effect>
+                        <DropShadowEffect BlurRadius="10" ShadowDepth="8"/>
+                    </Button.Effect>
+                </Button>
+                <TextBox x:Name="tbx_AddSalery" HorizontalAlignment="Left" Height="23" Margin="439.4,253,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="154" RenderTransformOrigin="0.503,-0.183" Grid.Column="1"/>
+                <TextBlock HorizontalAlignment="Left" Margin="366.4,74,0,0" TextWrapping="Wrap" Text="First Name" VerticalAlignment="Top" Width="73" Height="25" Grid.Column="1"/>
+                <TextBlock HorizontalAlignment="Left" Margin="366.4,103,0,0" TextWrapping="Wrap" Text="Second Name" VerticalAlignment="Top" Grid.Column="1"/>
+                <TextBlock HorizontalAlignment="Left" Margin="366.4,136,0,0" TextWrapping="Wrap" Text="Gender" VerticalAlignment="Top" Grid.Column="1"/>
+                <TextBlock HorizontalAlignment="Left" Margin="366.4,167,0,0" TextWrapping="Wrap" Text="Email" VerticalAlignment="Top" Grid.Column="1"/>
+                <TextBlock HorizontalAlignment="Left" Margin="366.4,198,0,0" TextWrapping="Wrap" Text="Number" VerticalAlignment="Top" Grid.Column="1"/>
+                <TextBlock HorizontalAlignment="Left" Margin="367.4,228,0,0" TextWrapping="Wrap" Text="Start Date" VerticalAlignment="Top" Grid.Column="1"/>
+                <TextBlock HorizontalAlignment="Left" Margin="366.4,260,0,0" TextWrapping="Wrap" Text="Salery" VerticalAlignment="Top" Grid.Column="1"/>
+                <Button x:Name="Btn_deleteEmployee" Content="Delete Employee" HorizontalAlignment="Left" Margin="134,346,0,0" VerticalAlignment="Top" Width="120" Click="Btn_deleteEmployee_Click" Grid.ColumnSpan="2"/>
+                <TextBox x:Name="Tbx_SelectedEmployee" HorizontalAlignment="Left" Height="23" Margin="134,318,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
+                <TextBlock HorizontalAlignment="Left" Margin="10,318,0,0" TextWrapping="Wrap" Text="Enter Customer ID" VerticalAlignment="Top" Width="108" Height="26"/>
+
+            </Grid>
+        </TabItem>
+        <TabItem Name="Calculator" Header="Calculator" Width="100">
+            <Grid Background="#FFB30909" Margin="0,-2,0,2.2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="72*"/>
+                    <ColumnDefinition Width="15*"/>
+                    <ColumnDefinition Width="307*"/>
+                </Grid.ColumnDefinitions>
+                <DataGrid x:Name="Dta_HowManyMonthsLeft" HorizontalAlignment="Left" Height="100" Margin="34,45,0,0" VerticalAlignment="Top" Width="216" Grid.ColumnSpan="3"/>
+                <DataGrid x:Name="Dta_Salerys" Grid.Column="2" HorizontalAlignment="Left" Height="100" Margin="110.4,45,0,0" VerticalAlignment="Top" Width="210"/>
+                <Button x:Name="BtnGetMembership" Content="Membership Left" HorizontalAlignment="Left" Margin="78,174,0,0" VerticalAlignment="Top" Width="126" Click="BtnGetMembership_Click" Grid.ColumnSpan="3"/>
+                <Button x:Name="BtnGetSalerys" Content="Get Salerys" Grid.Column="2" HorizontalAlignment="Left" Margin="154.4,174,0,0" VerticalAlignment="Top" Width="123" Click="BtnGetSalerys_Click"/>
+                <DataGrid x:Name="Dta_GetCustomerWithTrainer" Grid.Column="2" HorizontalAlignment="Left" Height="100" Margin="355.4,45,0,0" VerticalAlignment="Top" Width="215"/>
+                <Button x:Name="Btn_GetCustomerWithTrainer" Content="Button" Grid.Column="2" HorizontalAlignment="Left" Margin="396.4,174,0,0" VerticalAlignment="Top" Width="125" RenderTransformOrigin="0.363,0.677" Click="Btn_GetCustomerWithTrainer_Click"/>
+
+
+            </Grid>
+        </TabItem>
+    </TabControl>
+
+
+
 </Window>
